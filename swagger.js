@@ -1,16 +1,16 @@
-const swaggerAutogen = require('swagger-autogen')();
+const swaggerAutogen = require("swagger-autogen")();
 
 const doc = {
-    info: {
-      title: 'Users Api',
-      description: 'Users Api'
-    },
-    host: 'localhost:3001',
-    schemes: ['https', 'http']
-  };
+  info: {
+    title: "Github Passport Authorization",
+    description:
+      "OAuth to github for authentication",
+  },
+  host: "localhost:3000",
+  schemes: ["http"],
+};
 
-const outputFile = './swagger.json';
-const endpointsFiles = ['./routes/index.js'];
+const outputFile = "./swagger-output.json";
+const endpointsFile = ["./routes/index.js"];
 
-// this will generate swagger.json
-swaggerAutogen(outputFile, endpointsFiles, doc);
+swaggerAutogen(outputFile, endpointsFile, doc);

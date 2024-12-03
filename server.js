@@ -70,20 +70,12 @@ app.get("/", (req, res) => {
   );
 });
 
-app.get(
-  "/github/callback",
-  passport.authenticate(
-    "github",
-    {
-      failureRedirect: "/api-docs",
-      session: false,
-    },
-    (req, res) => {
-      req.session.user = req.user;
-      res.redirect("/");
-    }
-  )
-);
+app.get('/github/callback', passport.authenticate('github', {
+  failureRedirect: '/api-docs', session: false}), 
+  (req, res) => {
+  req.session.user = req.user;
+  res.redirect('/');
+});
 
 mongoDB.initDb((err, mongoDB) => {
   if (err) {

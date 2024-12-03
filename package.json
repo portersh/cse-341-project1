@@ -4,7 +4,8 @@
   "description": "Project 1",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
     "gen-swagger": "node swagger.js",
     "test:course": "jest __tests__/courseTests.spec.js --watch --coverage --runInBand --detectOpenHandles"
   },

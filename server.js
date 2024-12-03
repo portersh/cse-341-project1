@@ -71,7 +71,7 @@ app.get("/", (req, res) => {
 });
 
 app.get(
-  "/github/callback",
+  "/github",
   passport.authenticate(
     "github",
     {
